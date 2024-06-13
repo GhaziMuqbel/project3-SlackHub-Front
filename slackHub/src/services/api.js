@@ -5,7 +5,7 @@ export const BASE_URL = "http://localhost:3001"
 const SlackHub = Axios.create({ baseURL: BASE_URL })
 
 // Intercepts every request axios makes
-Client.interceptors.request.use(
+SlackHub.interceptors.request.use(
   (config) => {
     // Reads the token in localStorage
     const token = localStorage.getItem("token")

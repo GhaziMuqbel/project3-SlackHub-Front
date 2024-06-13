@@ -8,27 +8,29 @@ import { CheckSession } from "./services/Auth"
 import Nav from "./components/Nav"
 
 import "./App.css"
-const [user, setUser] = useState(null)
-
-const handleLogOut = () => {
-  //Reset all auth related state and clear localStorage
-  setUser(null)
-  localStorage.clear()
-}
-const checkToken = async () => {
-  //If a token exists, sends token to localStorage to persist logged in user
-  const user = await CheckSession()
-  setUser(user)
-}
-useEffect(() => {
-  const token = localStorage.getItem("token")
-  // Check if token exists before requesting to validate the token
-  if (token) {
-    checkToken()
-  }
-}, [])
+import { useEffect } from "react"
 
 function App() {
+  const [user, setUser] = useState(null)
+
+  const handleLogOut = () => {
+    //Reset all auth related state and clear localStorage
+    setUser(null)
+    localStorage.clear()
+  }
+  const checkToken = async () => {
+    //If a token exists, sends token to localStorage to persist logged in user
+    const user = await CheckSession()
+    setUser(user)
+  }
+  useEffect(() => {
+    const token = localStorage.getItem("token")
+    // Check if token exists before requesting to validate the token
+    if (token) {
+      checkToken()
+    }
+  }, [])
+
   return (
     <>
       <div>
