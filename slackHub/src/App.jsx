@@ -6,7 +6,8 @@ import SignIn from "./pages/SignIn"
 import Home from "./pages/Home"
 import { CheckSession } from "./services/Auth"
 import Nav from "./components/Nav"
-
+import InstructorPage from './pages/InstructorPage';
+import StudentPage from './pages/StudentPage';
 import "./App.css"
 import { useEffect } from "react"
 
@@ -41,6 +42,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn setUser={setUser} />} />
             <Route path="/register" element={<Register />} />
+            <Route path="/instructor" element={<InstructorPage />} />
+            <Route path="/student" element={<StudentPage />} />
           </Routes>
         </main>
       </div>
