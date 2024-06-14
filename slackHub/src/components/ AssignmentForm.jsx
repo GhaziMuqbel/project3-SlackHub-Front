@@ -1,7 +1,7 @@
 import React from 'react';
-import { Controlled as CodeMirror } from '@uiw/react-codemirror';
-import 'codemirror/lib/codemirror.css';
-import 'codemirror/mode/javascript/javascript';
+// import { Controlled as CodeMirror } from '@uiw/react-codemirror';
+// import 'codemirror/lib/codemirror.css';
+// import 'codemirror/mode/javascript/javascript';
 
 const AssignmentForm = ({ code, setCode, onSubmit }) => {
   return (
