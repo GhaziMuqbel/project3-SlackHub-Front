@@ -93,12 +93,7 @@ const Register = () => {
           </div>
 
           <button
-            disabled={
-              !formValues.email ||
-              (!formValues.password &&
-                formValues.confirmPassword === formValues.password) ||
-              formValues.userType
-            }
+            
           >
             Sign In
           </button>

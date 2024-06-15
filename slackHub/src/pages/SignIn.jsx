@@ -12,10 +12,13 @@ const SignIn = ({ setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = await SignInUser(formValues)
+    const payload = formValues
+    //const payload = await SignInUser(formValues)
     setFormValues({ email: "", password: "" })
+    console.log(payload)
     setUser(payload)
-    navigate("/feed")
+    localStorage.setItem("user", JSON.stringify(payload));
+    //navigate("/feed")
   }
 
   return (
