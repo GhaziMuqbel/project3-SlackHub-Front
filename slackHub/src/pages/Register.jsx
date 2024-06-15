@@ -96,8 +96,8 @@ const Register = () => {
             disabled={
               !formValues.email ||
               (!formValues.password &&
-                formValues.confirmPassword === formValues.password) ||
-              formValues.userType
+                formValues.confirmPassword === formValues.password &&
+                formValues.userType)
             }
           >
             Sign In

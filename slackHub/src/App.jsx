@@ -1,5 +1,5 @@
 import { useState } from "react"
-import Forms from "./components/Forms"
+// import Forms from "./components/Forms"
 import { Route, Routes } from "react-router"
 import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
@@ -35,7 +35,7 @@ function App() {
   return (
     <>
       <div>
-        <Forms />
+        {/* <Forms /> */}
         <Nav user={user} handleLogOut={handleLogOut} />
         <main>
           <Routes>
