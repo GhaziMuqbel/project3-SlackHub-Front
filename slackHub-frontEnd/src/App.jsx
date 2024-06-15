@@ -6,8 +6,8 @@ import SignIn from "./pages/SignIn"
 import Home from "./pages/Home"
 import { CheckSession } from "./services/Auth"
 import Nav from "./components/Nav"
-import Instructor from './components/Instructor';
-import Student from './components/Student';
+import Instructor from "./components/Instructor"
+import Student from "./components/Student"
 
 import "./App.css"
 const [user, setUser] = useState(null)
@@ -33,26 +33,23 @@ useEffect(() => {
 function App() {
   return (
     <>
-    <Router>
-      <div>
-        <Forms />
+      <Router>
+        <div>
+          <Forms />
 
-        <Switch>
-        
-        </Switch>
+          <Switch></Switch>
 
-        <Nav user={user} handleLogOut={handleLogOut} />
-        <main>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<SignIn setUser={setUser} />} />
-            <Route path="/register" element={<Register />} />
-               <Route path="/instructor" element={<InstructorPage />} />
-            <Route path="/student" element={<StudentPage />} />
-          </Routes>
-        </main>
-
-      </div>
+          <Nav user={user} handleLogOut={handleLogOut} />
+          <main>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/signin" element={<SignIn setUser={setUser} />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/instructor" element={<InstructorPage />} />
+              <Route path="/student" element={<StudentPage />} />
+            </Routes>
+          </main>
+        </div>
       </Router>
     </>
   )
