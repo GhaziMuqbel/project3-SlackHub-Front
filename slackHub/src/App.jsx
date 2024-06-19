@@ -6,8 +6,11 @@ import SignIn from "./pages/SignIn"
 import Home from "./pages/Home"
 import { CheckSession } from "./services/Auth"
 import Nav from "./components/Nav"
-import InstructorPage from './pages/InstructorPage';
-import StudentPage from './pages/StudentPage';
+// import Header from "./components/Header"
+import InstructorPage from "./pages/InstructorPage"
+import StudentPage from "./pages/StudentPage"
+import About from "./pages/About"
+// import Course from './pages/Course';
 import "./App.css"
 import { useEffect } from "react"
 
@@ -35,7 +38,6 @@ function App() {
   return (
     <>
       <div>
-        {/* <Forms /> */}
         <Nav user={user} handleLogOut={handleLogOut} />
         <main>
           <Routes>
@@ -44,6 +46,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/instructor" element={<InstructorPage />} />
             <Route path="/student" element={<StudentPage />} />
+            <Route path="/about" element={<About />} />
+
+            {/* <Route path="/Course" element={<StudentPage />} /> */}
           </Routes>
         </main>
       </div>

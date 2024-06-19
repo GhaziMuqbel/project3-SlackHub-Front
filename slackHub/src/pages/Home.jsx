@@ -1,9 +1,5 @@
-import { useNavigate } from "react-router-dom"
-
 const Home = () => {
-  let navigate = useNavigate()
-
-  return <div></div>
+  return <div>wwww</div>
 }
 
 export default Home
