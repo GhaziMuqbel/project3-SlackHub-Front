@@ -32,20 +32,26 @@ function App() {
       checkToken()
     }
   }, [])
-  console.log(user)
+  //console.log(user.type)
+  //{user.type && <Route path="/" element={<Home />} />}
   return (
     <>
       <div>
         <Nav user={user} handleLogOut={handleLogOut} />
         <main>
           <Routes>
+            {user ? (
+              user.type ? (
+                <Route path="/" element={<Home />} />
+              ) : (
+                <Route path="/instructor" element={<InstructorPage />} />
+              )
+            ) : null}
             <Route path="/" element={<Home />} />
-
             <Route path="/signin" element={<SignIn setUser={setUser} />} />
 
             <Route path="/register" element={<Register />} />
 
-            <Route path="/instructor" element={<InstructorPage />} />
             <Route path="/student" element={<StudentPage />} />
 
             <Route path="/about" element={<About />} />
