@@ -85,7 +85,7 @@ const Register = () => {
             <label htmlFor="userType">User Type</label>
             <input
               onChange={handleChange}
-              type="chechBox"
+              type="checkBox"
               name="userType"
               value={formValues.userType}
               required
