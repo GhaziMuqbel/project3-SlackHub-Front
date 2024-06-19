@@ -1,15 +1,15 @@
-import { useState } from "react"
-import { RegisterUser } from "../services/Auth"
-import { useNavigate } from "react-router-dom"
+import { useState } from 'react'
+import { RegisterUser } from '../services/Auth'
+import { useNavigate } from 'react-router-dom'
 
 const Register = () => {
   let navigate = useNavigate()
   const [formValues, setFormValues] = useState({
-    username: "",
-    email: "",
-    password: "",
-    confirmPassword: "",
-    userType: true,
+    username: '',
+    email: '',
+    password: '',
+    confirmPassword: '',
+    userType: true
   })
 
   const handleChange = (e) => {
@@ -21,16 +21,16 @@ const Register = () => {
     await RegisterUser({
       username: formValues.username,
       email: formValues.email,
-      password: formValues.password,
+      password: formValues.password
     })
     setFormValues({
-      username: "",
-      email: "",
-      password: "",
-      confirmPassword: "",
-      userType: true,
+      username: '',
+      email: '',
+      password: '',
+      confirmPassword: '',
+      userType: true
     })
-    navigate("/signin")
+    navigate('/signin')
   }
 
   return (
@@ -85,7 +85,7 @@ const Register = () => {
             <label htmlFor="userType">User Type</label>
             <input
               onChange={handleChange}
-              type="chechBox"
+              type="checkBox"
               name="userType"
               value={formValues.userType}
               required
