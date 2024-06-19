@@ -1,7 +1,7 @@
 const About = () => {
   return (
-    <div>
-      <h1>Who is SlackHub?</h1>
+    <div className="about-container">
+      <h1>Who is LearnerLink?</h1>
       <h2>Our journey</h2>
       <p>
         After a busy journey in creating our first application, here we are,

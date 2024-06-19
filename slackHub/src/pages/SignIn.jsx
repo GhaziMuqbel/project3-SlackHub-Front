@@ -1,23 +1,23 @@
-import React, { useState } from 'react'
-import { TextField, Button, Typography } from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import { SignInUser } from '../services/Auth'
+import React, { useState } from 'react';
+import { TextField, Button, Typography } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
+import { SignInUser } from '../services/Auth';
 
 const SignIn = ({ setUser }) => {
-  const navigate = useNavigate()
-  const [formValues, setFormValues] = useState({ email: '', password: '' })
+  const navigate = useNavigate();
+  const [formValues, setFormValues] = useState({ email: '', password: '' });
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
-  }
+    setFormValues({ ...formValues, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
-    const payload = await SignInUser(formValues)
-    setFormValues({ email: '', password: '' })
-    setUser(payload)
-    navigate('/feed')
-  }
+    e.preventDefault();
+    const payload = await SignInUser(formValues);
+    setFormValues({ email: '', password: '' });
+    setUser(payload);
+    navigate('/feed');
+  };
 
   return (
     <div className="signincol">
@@ -58,7 +58,8 @@ const SignIn = ({ setUser }) => {
         </Button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default SignIn
+export default SignIn;
+

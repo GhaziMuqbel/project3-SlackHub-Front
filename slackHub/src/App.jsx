@@ -1,20 +1,3 @@
-
-import { useState } from "react"
-// import Forms from "./components/Forms"
-import { Route, Routes } from "react-router"
-import Register from "./pages/Register"
-import SignIn from "./pages/SignIn"
-import Home from "./pages/Home"
-import { CheckSession } from "./services/Auth"
-import Nav from "./components/Nav"
-// import Header from "./components/Header"
-import InstructorPage from "./pages/InstructorPage"
-import StudentPage from "./pages/StudentPage"
-import About from "./pages/About"
-// import Course from './pages/Course';
-import "./App.css"
-import { useEffect } from "react"
-=======
 import { useState } from 'react'
 import Forms from './components/Forms'
 import { Route, Routes } from 'react-router'
@@ -27,6 +10,7 @@ import InstructorPage from './pages/InstructorPage'
 import StudentPage from './pages/StudentPage'
 import './App.css'
 import { useEffect } from 'react'
+import About from './pages/About'
 
 
 function App() {
