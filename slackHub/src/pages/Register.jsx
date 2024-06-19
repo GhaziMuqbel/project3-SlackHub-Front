@@ -28,7 +28,8 @@ const Register = () => {
     await RegisterUser({
       username: formValues.username,
       email: formValues.email,
-      password: formValues.password
+      password: formValues.password,
+      userType: formValues.userType
     })
     setFormValues({
       username: '',
@@ -97,6 +98,7 @@ const Register = () => {
               onChange={handleChange}
               name="userType"
             />
+<<<<<<< HEAD
           }
           label="User Type"
         />
@@ -114,6 +116,17 @@ const Register = () => {
           Register
         </Button>
       </form>
+=======
+          </div>
+
+          <button
+            
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
+>>>>>>> origin/osama
     </div>
   )
 }

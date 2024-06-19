@@ -16,7 +16,14 @@
     "@uiw/react-codemirror": "^4.22.2",
     "axios": "^1.7.2",
     "codemirror": "^5.65.16",
+<<<<<<< HEAD
+    "node": "^22.3.0",
+=======
+    "dotenv": "^16.4.5",
+>>>>>>> origin/osama
     "react": "^18.2.0",
+    "react-chat-engine-advanced": "^0.1.28",
+    "react-chat-engine-pretty": "^0.1.8",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
     "react-router-dom": "^6.23.1"
