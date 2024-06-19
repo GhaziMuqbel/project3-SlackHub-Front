@@ -23,45 +23,55 @@ const Forms = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="username">Username:</label>
-      <input
-        id="username"
-        type="text"
-        onChange={handleChange}
-        value={formState.username}
-      />
+      <div id="username" className="Form">
+        <label htmlFor="username">Username:</label>
+        <input
+          id="username"
+          type="text"
+          onChange={handleChange}
+          value={formState.username}
+        />
+      </div>
 
-      <label htmlFor="userType">User Type:</label>
-      <input
-        id="user-type"
-        type="checkBox"
-        onChange={handleChange}
-        value={formState.userType}
-      />
+      <div id="userType" className="Form">
+        <label htmlFor="userType">User Type:</label>
+        <input
+          id="user-type"
+          type="checkBox"
+          onChange={handleChange}
+          value={formState.userType}
+        />
+      </div>
 
-      <label htmlFor="email">Email:</label>
-      <input
-        id="email"
-        type="email"
-        onChange={handleChange}
-        value={formState.email}
-      />
+      <div id="email" className="Form">
+        <label htmlFor="email">Email:</label>
+        <input
+          id="email"
+          type="email"
+          onChange={handleChange}
+          value={formState.email}
+        />
+      </div>
 
-      <label htmlFor="password">Password:</label>
-      <input
-        id="password"
-        type="password"
-        onChange={handleChange}
-        value={formState.password}
-      />
+      <div id="password" className="Form">
+        <label htmlFor="password">Password:</label>
+        <input
+          id="password"
+          type="password"
+          onChange={handleChange}
+          value={formState.password}
+        />
+      </div>
 
-      <label htmlFor="confirmPassword">Confirm Password:</label>
-      <input
-        id="confirm-password"
-        type="password"
-        onChange={handleChange}
-        value={formState.confirmPassword}
-      />
+      <div id="confirmPassword" className="Form">
+        <label htmlFor="confirmPassword">Confirm Password:</label>
+        <input
+          id="confirm-password"
+          type="password"
+          onChange={handleChange}
+          value={formState.confirmPassword}
+        />
+      </div>
 
       <button type="submit">SignUp</button>
     </form>

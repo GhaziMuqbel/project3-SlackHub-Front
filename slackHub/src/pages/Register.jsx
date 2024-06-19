@@ -34,10 +34,10 @@ const Register = () => {
   }
 
   return (
-    <div className="signin col">
-      <div className="card-overlay centered">
+    <div className="signincol">
+      <div className="cardoverlaycentered">
         <form className="col" onSubmit={handleSubmit}>
-          <div className="input-wrapper">
+          <div className="username">
             <label htmlFor="username">Username</label>
             <input
               onChange={handleChange}
@@ -48,7 +48,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div className="email">
             <label htmlFor="email">Email</label>
             <input
               onChange={handleChange}
@@ -60,7 +60,7 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div className="password">
             <label htmlFor="password">Password</label>
             <input
               onChange={handleChange}
@@ -70,7 +70,7 @@ const Register = () => {
               required
             />
           </div>
-          <div className="input-wrapper">
+          <div className="confirmPassword">
             <label htmlFor="confirmPassword">Confirm Password</label>
             <input
               onChange={handleChange}
@@ -81,7 +81,7 @@ const Register = () => {
             />
           </div>
 
-          <div className="input-wrapper">
+          <div className="userType">
             <label htmlFor="userType">User Type</label>
             <input
               onChange={handleChange}
@@ -96,11 +96,11 @@ const Register = () => {
             disabled={
               !formValues.email ||
               (!formValues.password &&
-                formValues.confirmPassword === formValues.password) ||
-              formValues.userType
+                formValues.confirmPassword === formValues.password &&
+                formValues.userType)
             }
           >
-            Sign In
+            Register
           </button>
         </form>
       </div>
