@@ -44,9 +44,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/instructor" element={<InstructorPage />} />
             <Route path="/student" element={<StudentPage />} />
-            <Route path="/" exact component={ReviewList} />
-            <Route path="/create" component={ReviewForm} />
-            <Route path="/reviews/:id" component={ReviewDetail} />
+            {/* <Route path="/" exact component={<ReviewList />} />
+            <Route path="/create" component={<ReviewForm />} />
+            <Route path="/reviews/:id" component={<ReviewDetail />} /> */}
           </Routes>
         </main>
       </div>

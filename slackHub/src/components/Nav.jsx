@@ -1,44 +1,39 @@
-import { Link } from "react-router-dom"
+import { AppBar, Toolbar, Typography, Button } from '@mui/material'
+import { Link } from 'react-router-dom'
 
 const Nav = ({ user, handleLogOut }) => {
-  let userOptions
-  if (user) {
-    userOptions = (
-      <nav>
-        <h3>Welcome {user.email}!</h3>
-        <Link onClick={handleLogOut} to="/">
-          Sign Out
-        </Link>
-      </nav>
-    )
-  }
-
-  const publicOptions = (
-    <nav>
-      {/* <Link to="/">Home</Link> */}
-      <div className="register">
-        <Link to="/register">Register</Link>
-      </div>
-
-      <div className="signin">
-        <Link to="/signin">Sign In</Link>
-      </div>
-    </nav>
-  )
-
   return (
-    <header>
-      <Link to="/">
-        <div className="logo-wrapper" alt="logo">
-          <img
-            className="logo"
-            src="https://avatars.dicebear.com/api/gridy/app.svg"
-            alt="welcome banner"
-          />
-        </div>
-      </Link>
-      {user ? userOptions : publicOptions}
-    </header>
+    <AppBar position="static">
+      <Toolbar>
+        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          My App
+        </Typography>
+        {user ? (
+          <>
+            <Typography variant="h6" component="div" sx={{ mr: 2 }}>
+              Welcome {user.email}!
+            </Typography>
+            <Button
+              color="inherit"
+              onClick={handleLogOut}
+              component={Link}
+              to="/"
+            >
+              Sign Out
+            </Button>
+          </>
+        ) : (
+          <>
+            <Button color="inherit" component={Link} to="/register">
+              Register
+            </Button>
+            <Button color="inherit" component={Link} to="/signin">
+              Sign In
+            </Button>
+          </>
+        )}
+      </Toolbar>
+    </AppBar>
   )
 }
 
