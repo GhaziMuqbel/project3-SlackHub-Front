@@ -1,15 +1,30 @@
-/* app.css */
 
-/* Global styles */
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f0f0f0; /* Background color for the entire app */
+  
+
+  /* background-image: linear-gradient(90deg, #8f90ca 0%, #8bcdda 100%); */
+  background-color: #ccc;
+}
+
+h1 {
+  font-family: cursive;
+}
+
+h2 {
+  font-family: cursive;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 /* Header styles */
 header {
-  background-color: #0f1036; /* Purple background color */
+  background-color: #1d0a3f; /* Purple background color */
   color: #ffffff; /* Header text color */
   padding: 10px 20px;
   display: flex;
@@ -47,36 +62,42 @@ header {
   padding: 20px;
 }
 
-/* Signincol and Register styles */
+
 .signincol {
-  max-width: 400px; /* Adjust the max-width as needed */
+  max-width: 400px; 
   margin: 20px auto;
-  background-color: #ffffff; /* Background color for signincol and Register */
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+ 
 }
 
 .signincol h4 {
-  margin-bottom: 20px; /* Bottom margin for headings inside signincol */
+  margin-bottom: 20px; 
+  
 }
 
-/* Form styles */
+
 form {
   display: flex;
   flex-direction: column;
 }
 
-/* Input field styles */
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="checkbox"] {
   margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid #ccc; /* Border color for input fields */
+  border: 1px solid #ccc; 
   border-radius: 4px;
   font-size: 16px;
+  background-color: aliceblue;
+  
 }
 
 input[type="checkbox"] {
@@ -96,28 +117,29 @@ button {
 }
 
 button:hover {
-  background-color: #5e35b1; /* Darker color on hover */
+  background-color: #5e35b1; 
 }
 
-/* Link styles */
+
 a {
-  color: #7b1fa2; /* Link color */
+  color: #7b1fa2; 
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline; /
 }
 
-/* app.css */
 
 .about-container {
-  max-width: 600px; /* Adjust the maximum width as needed */
+  max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff; /* Background color for the about section */
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 .about-container h2 {
