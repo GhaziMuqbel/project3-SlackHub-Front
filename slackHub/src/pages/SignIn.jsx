@@ -1,10 +1,11 @@
-import { useState } from "react"
-import { SignInUser } from "../services/Auth"
-import { useNavigate } from "react-router-dom"
+import React, { useState } from 'react'
+import { TextField, Button, Typography } from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { SignInUser } from '../services/Auth'
 
 const SignIn = ({ setUser }) => {
-  let navigate = useNavigate()
-  const [formValues, setFormValues] = useState({ email: "", password: "" })
+  const navigate = useNavigate()
+  const [formValues, setFormValues] = useState({ email: '', password: '' })
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -13,41 +14,49 @@ const SignIn = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const payload = await SignInUser(formValues)
-    setFormValues({ email: "", password: "" })
+    setFormValues({ email: '', password: '' })
     setUser(payload)
-    navigate("/feed")
+    navigate('/feed')
   }
 
   return (
     <div className="signincol">
-      <div className="card-overlay centered">
-        <form className="col" onSubmit={handleSubmit}>
-          <div className="email">
-            <label htmlFor="email">Email</label>
-            <input
-              onChange={handleChange}
-              name="email"
-              type="email"
-              placeholder="example@example.com"
-              value={formValues.email}
-              required
-            />
-          </div>
-          <div className="password">
-            <label htmlFor="password">Password</label>
-            <input
-              onChange={handleChange}
-              type="password"
-              name="password"
-              value={formValues.password}
-              required
-            />
-          </div>
-          <button disabled={!formValues.email || !formValues.password}>
-            Sign In
-          </button>
-        </form>
-      </div>
+      <Typography variant="h4" gutterBottom>
+        Sign In
+      </Typography>
+      <form className="col" onSubmit={handleSubmit}>
+        <TextField
+          label="Email"
+          name="email"
+          type="email"
+          value={formValues.email}
+          onChange={handleChange}
+          variant="outlined"
+          margin="normal"
+          fullWidth
+          required
+        />
+        <TextField
+          label="Password"
+          name="password"
+          type="password"
+          value={formValues.password}
+          onChange={handleChange}
+          variant="outlined"
+          margin="normal"
+          fullWidth
+          required
+        />
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          fullWidth
+          disabled={!formValues.email || !formValues.password}
+        >
+          Sign In
+        </Button>
+      </form>
     </div>
   )
 }
