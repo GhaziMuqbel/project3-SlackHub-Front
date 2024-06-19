@@ -3,13 +3,13 @@
 /* Global styles */
 body {
   margin: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   background-color: #f0f0f0; /* Background color for the entire app */
 }
 
 /* Header styles */
 header {
-  background-color: #7b1fa2; /* Purple background color */
+  background-color: #0f1036; /* Purple background color */
   color: #ffffff; /* Header text color */
   padding: 10px 20px;
   display: flex;
@@ -68,10 +68,10 @@ form {
 }
 
 /* Input field styles */
-input[type='text'],
-input[type='email'],
-input[type='password'],
-input[type='checkbox'] {
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="checkbox"] {
   margin-bottom: 15px;
   padding: 10px;
   border: 1px solid #ccc; /* Border color for input fields */
@@ -79,7 +79,7 @@ input[type='checkbox'] {
   font-size: 16px;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   width: auto; /* Adjust checkbox width */
   margin-top: 5px;
 }
