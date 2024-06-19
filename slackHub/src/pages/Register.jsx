@@ -98,6 +98,7 @@ const Register = () => {
               onChange={handleChange}
               name="userType"
             />
+<<<<<<< HEAD
           }
           label="User Type"
         />
@@ -115,6 +116,17 @@ const Register = () => {
           Register
         </Button>
       </form>
+=======
+          </div>
+
+          <button
+            
+          >
+            Sign In
+          </button>
+        </form>
+      </div>
+>>>>>>> origin/osama
     </div>
   )
 }

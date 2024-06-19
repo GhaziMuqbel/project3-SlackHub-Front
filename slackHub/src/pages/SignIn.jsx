@@ -13,12 +13,13 @@ const SignIn = ({ setUser }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const payload = await SignInUser(formValues)
-    setFormValues({ email: '', password: '' })
-    setUser(payload)
-
+    const payload = formValues
+    //const payload = await SignInUser(formValues)
+    setFormValues({ email: "", password: "" })
     console.log(payload)
-    navigate('/register')
+    setUser(payload)
+    localStorage.setItem("user", JSON.stringify(payload));
+    //navigate("/feed")
   }
 
   return (
