@@ -7,11 +7,12 @@ import Home from "./pages/Home"
 import { CheckSession } from "./services/Auth"
 import Nav from "./components/Nav"
 import InstructorPage from "./pages/InstructorPage"
-import StudentPage from "./pages/StudentPage"
+//import StudentPage from "./pages/StudentPage"
 import Course from "./pages/Course"
 import "./App.css"
 import { useEffect } from "react"
 import About from "./pages/About"
+import CourseAdd from './components/CourseAdd'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -31,6 +32,7 @@ function App() {
       checkToken()
     }
   }, [])
+  console.log(`user in the app.jsx file ${JSON.stringify(user)}`)
 
   return (
     <>
@@ -44,12 +46,13 @@ function App() {
 
             <Route path="/register" element={<Register />} />
 
-            <Route path="/instructor" element={<InstructorPage />} />
-            <Route path="/student" element={<StudentPage />} />
+             <Route path="/instructor" element={<InstructorPage user={user}/>} /> 
+            {/* <Route path="/student" element={<StudentPage />} /> */}
 
             <Route path="/about" element={<About />} />
 
             <Route path="/view/course/:courseId" element={<Course />} />
+            <Route path="/addcourse" element={<CourseAdd />} />
           </Routes>
         </main>
       </div>
