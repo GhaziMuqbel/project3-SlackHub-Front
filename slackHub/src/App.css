@@ -1,16 +1,30 @@
-/* app.css */
 
-/* Global styles */
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-color: #f0f0f0; /* Background color for the entire app */
+  background-image: linear-gradient(90deg, #cdcde4 0%, #c3eff7 100%); 
+ 
+ 
 }
 
-/* Header styles */
+h1 {
+  font-family: cursive;
+}
+
+h2 {
+  font-family: cursive;
+}
+
+p {
+  font-family: "Times New Roman", Times, serif;
+  text-align: justify;
+  text-justify: inter-word;
+}
+
+
 header {
-  background-color: #0f1036; /* Purple background color */
-  color: #ffffff; /* Header text color */
+  background-color: #1d0a3f; 
+  color: #ffffff; 
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -23,7 +37,7 @@ header {
 }
 
 .logo {
-  height: 40px; /* Adjust the height of your logo */
+  height: 40px; 
   margin-right: 10px;
 }
 
@@ -33,99 +47,106 @@ header {
 }
 
 .nav-links a {
-  color: #ffffff; /* Link text color */
+  color: #ffffff; 
   text-decoration: none;
   margin-left: 20px;
 }
 
 .nav-links a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline; 
 }
 
-/* Main content container */
+
 .main-content {
   padding: 20px;
 }
 
-/* Signincol and Register styles */
+
 .signincol {
-  max-width: 400px; /* Adjust the max-width as needed */
+  max-width: 400px; 
   margin: 20px auto;
-  background-color: #ffffff; /* Background color for signincol and Register */
   padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+ 
 }
 
 .signincol h4 {
-  margin-bottom: 20px; /* Bottom margin for headings inside signincol */
+  margin-bottom: 20px; 
+  
 }
 
-/* Form styles */
+
 form {
   display: flex;
   flex-direction: column;
 }
 
-/* Input field styles */
+
 input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="checkbox"] {
   margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid #ccc; /* Border color for input fields */
+  border: 1px solid #ccc; 
   border-radius: 4px;
   font-size: 16px;
+  background-color: aliceblue;
+  
 }
 
 input[type="checkbox"] {
-  width: auto; /* Adjust checkbox width */
+  width: auto; 
   margin-top: 5px;
 }
 
-/* Button styles */
+
 button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #7b1fa2; /* Button background color */
-  color: #ffffff; /* Button text color */
+  background-color: #7b1fa2; 
+  color: #ffffff; 
   font-size: 16px;
 }
 
 button:hover {
-  background-color: #5e35b1; /* Darker color on hover */
+  background-color: #5e35b1; 
 }
 
-/* Link styles */
+
 a {
-  color: #7b1fa2; /* Link color */
+  color: #7b1fa2; 
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline; /
 }
 
-/* app.css */
 
 .about-container {
-  max-width: 600px; /* Adjust the maximum width as needed */
+  max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff; /* Background color for the about section */
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 .about-container h2 {
-  font-size: 24px; /* Heading font size */
-  margin-bottom: 10px; /* Bottom margin for the heading */
+  font-size: 24px; 
+  margin-bottom: 10px; 
 }
 
 .about-container p {
-  font-size: 16px; /* Paragraph font size */
-  line-height: 1.6; /* Line height for readability */
+  font-size: 16px; 
+  line-height: 1.6; 
 }
