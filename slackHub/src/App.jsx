@@ -1,5 +1,5 @@
 import { useState } from "react"
-// import Forms from "./components/Forms"
+import Forms from "./components/Forms"
 import { Route, Routes } from "react-router"
 import Register from "./pages/Register"
 import SignIn from "./pages/SignIn"
@@ -25,7 +25,7 @@ function App() {
     setUser(user)
   }
   useEffect(() => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem('token')
     // Check if token exists before requesting to validate the token
     if (token) {
       checkToken()
@@ -44,6 +44,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/instructor" element={<InstructorPage />} />
             <Route path="/student" element={<StudentPage />} />
+            <Route path="/" exact component={ReviewList} />
+            <Route path="/create" component={ReviewForm} />
+            <Route path="/reviews/:id" component={ReviewDetail} />
           </Routes>
         </main>
       </div>
