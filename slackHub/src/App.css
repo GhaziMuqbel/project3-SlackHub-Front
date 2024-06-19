@@ -1,10 +1,9 @@
-/* app.css */
-
 /* Global styles */
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: #f0f0f0; /* Background color for the entire app */
+  color: #333; /* Default text color */
 }
 
 /* Header styles */
@@ -15,6 +14,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow for header */
 }
 
 .logo-wrapper {
@@ -90,42 +90,48 @@ button {
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #7b1fa2; /* Button background color */
-  color: #ffffff; /* Button text color */
+  background-color: #7b1fa2; 
+  color: #ffffff; 
   font-size: 16px;
 }
 
 button:hover {
-  background-color: #5e35b1; /* Darker color on hover */
+  background-color: #5e35b1; 
 }
 
-/* Link styles */
+
 a {
-  color: #7b1fa2; /* Link color */
+  color: #7b1fa2; 
   text-decoration: none;
 }
 
 a:hover {
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: underline; 
 }
 
-/* app.css */
 
 .about-container {
-  max-width: 600px; /* Adjust the maximum width as needed */
+  max-width: 600px; 
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff; /* Background color for the about section */
+  background-color: #ffffff; 
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow for a subtle elevation effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
 .about-container h2 {
-  font-size: 24px; /* Heading font size */
-  margin-bottom: 10px; /* Bottom margin for the heading */
+  font-size: 24px; 
+  margin-bottom: 10px; 
 }
 
 .about-container p {
-  font-size: 16px; /* Paragraph font size */
-  line-height: 1.6; /* Line height for readability */
+  font-size: 16px;
+  line-height: 1.6; 
+}
+
+
+.section-title {
+  font-size: 20px;
+  color: #7b1fa2;
+  margin-bottom: 10px;
 }
