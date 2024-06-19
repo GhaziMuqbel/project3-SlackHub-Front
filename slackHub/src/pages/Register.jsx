@@ -95,6 +95,53 @@ const Register = () => {
             <Checkbox
               checked={formValues.userType}
               onChange={handleChange}
+
+              name="username"
+              type="text"
+              placeholder="John Smith"
+              value={formValues.username}
+              required
+            />
+          </div>
+          <div className="email">
+            <label htmlFor="email">Email</label>
+            <input
+              onChange={handleChange}
+              name="email"
+              type="email"
+              placeholder="example@example.com"
+              value={formValues.email}
+              required
+            />
+          </div>
+
+          <div className="password">
+            <label htmlFor="password">Password</label>
+            <input
+              onChange={handleChange}
+              type="password"
+              name="password"
+              value={formValues.password}
+              required
+            />
+          </div>
+          <div className="confirmPassword">
+            <label htmlFor="confirmPassword">Confirm Password</label>
+            <input
+              onChange={handleChange}
+              type="password"
+              name="confirmPassword"
+              value={formValues.confirmPassword}
+              required
+            />
+          </div>
+
+          <div className="userType">
+            <label htmlFor="userType">User Type</label>
+            <input
+              onChange={handleChange}
+              type="checkBox"
+
               name="userType"
             />
           }
