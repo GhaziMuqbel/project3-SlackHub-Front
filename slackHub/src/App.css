@@ -1,10 +1,12 @@
 
+
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   background-image: linear-gradient(90deg, #cdcde4 0%, #c3eff7 100%); 
  
  
+
 }
 
 h1 {
@@ -127,11 +129,23 @@ a {
 }
 
 a:hover {
+
+  text-decoration: underline; 
+=======
   text-decoration: underline; /
+
 }
 
 
 .about-container {
+
+  max-width: 600px; 
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff; 
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+
   max-width: 600px;
   margin: 20px auto;
   padding: 20px;
@@ -140,6 +154,7 @@ a:hover {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+
 }
 
 .about-container h2 {
@@ -148,6 +163,18 @@ a:hover {
 }
 
 .about-container p {
+
+  font-size: 16px;
+  line-height: 1.6; 
+}
+
+
+.section-title {
+  font-size: 20px;
+  color: #7b1fa2;
+  margin-bottom: 10px;
+
   font-size: 16px; 
   line-height: 1.6; 
+
 }
