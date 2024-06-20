@@ -11,6 +11,7 @@ import InstructorPage from "./pages/InstructorPage"
 import Course from "./pages/Course"
 import CourseDetails from "./pages/CourseDetails"
 import CourseAdd from "./components/CourseAdd"
+import AddStudent from "./components/AddStudent"
 import "./App.css"
 import { useEffect } from "react"
 import About from "./pages/About"
@@ -61,7 +62,7 @@ function App() {
               path="/view/instructorcourse/:courseId"
               element={<CourseDetails />}
             />
-            {/* <Route path="/student" element={<StudentPage />} /> */}
+            <Route path="/addstudents/:courseId" element={<AddStudent />} />
 
             <Route path="/about" element={<About />} />
 
