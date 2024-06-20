@@ -3,40 +3,42 @@ import axios from "axios"
 import AddStudent from "../components/AddStudent"
 import { useEffect, useState } from "react"
 // import { useNavigate } from "react-router-dom"
-// import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom"
 
 const CourseDetails = () => {
   const [students, setStudents] = useState(null)
   // const navigate = useNavigate()
-  // const { studentId } = useParams()
-
-  const getStudents = async () => {
-    const response = await axios.get(`http://localhost:3001/course/${courseId}`)
-    console.log(response.data)
-    setStudents(response.data)
-  }
+  const { courseId } = useParams()
 
   // const handleAssignmentClick = (assignmentId) => {
   //   navigate(`/course/details/${assignmentId}`)
   // }
 
   useEffect(() => {
+    const getStudents = async () => {
+      const response = await axios.get(
+        `http://localhost:3001/course/getDetails/${courseId}`
+      )
+      console.log(response.data)
+      setStudents(response.data)
+    }
     getStudents()
   }, [])
-  console.log(`assignments ==> ${assignments}`)
+  //console.log(`assignments ==> ${assignments}`)
 
-  return (
+  return students ? (
     <div>
-      {students?.map((student) => (
+      {students.name}
+      {students.Description}
+      {students?.Students.map((student) => (
         <div key={student._id}>
-          <AddStudent
-            name={student.name}
-            email={student.email}
-            // onClick={() => handleAssignmentClick(assignment._id)}
-          />
+          {student.username}
+          {student.email}
         </div>
       ))}
     </div>
+  ) : (
+    <div>LOADING</div>
   )
 }
 

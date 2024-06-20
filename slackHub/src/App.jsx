@@ -6,10 +6,11 @@ import SignIn from "./pages/SignIn"
 import Home from "./pages/Home"
 import { CheckSession } from "./services/Auth"
 import Nav from "./components/Nav"
-// import InstructorPage from "./pages/InstructorPage"
+import InstructorPage from "./pages/InstructorPage"
 // import StudentPage from "./pages/StudentPage"
 import Course from "./pages/Course"
-// import CourseDetails from "./pages/CourseDetails"
+import CourseDetails from "./pages/CourseDetails"
+import CourseAdd from "./components/CourseAdd"
 import "./App.css"
 import { useEffect } from "react"
 import About from "./pages/About"
@@ -56,13 +57,17 @@ function App() {
             <Route path="/signin" element={<SignIn setUser={setUser} />} />
 
             <Route path="/register" element={<Register />} />
-
-            {/* <Route path="/instructor" element={<InstructorPage />} /> */}
+            <Route
+              path="/view/instructorcourse/:courseId"
+              element={<CourseDetails />}
+            />
             {/* <Route path="/student" element={<StudentPage />} /> */}
 
             <Route path="/about" element={<About />} />
 
             <Route path="/view/course/:courseId" element={<Course />} />
+
+            <Route path="/addcourse" element={<CourseAdd />} />
 
             {/* <Route
               path="/view/CourseDetails/:courseId"
