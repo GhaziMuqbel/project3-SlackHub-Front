@@ -13,7 +13,7 @@ import About from './pages/About'
 import CourseAdd from './components/CourseAdd'
 import AssignmentUpload from './components/AssignmentUpload'
 import Assignment from './components/Assignment'
-
+import InstructorPage from './pages/InstructorPage'
 function App() {
   const [user, setUser] = useState(null)
 
@@ -58,12 +58,11 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/view/course/:courseId" element={<Course />} />
             <Route path="/addcourse" element={<CourseAdd />} />
-            {user && user.isInstructor && (
-              <Route
-                path="/upload/assignment/:courseId"
-                element={<AssignmentUpload />}
-              />
-            )}
+            <Route path="/addcourse/:instructorId" element={<CourseAdd />} />
+            <Route
+              path="/upload/assignment/:courseId"
+              element={<AssignmentUpload />}
+            />
           </Routes>
         </main>
       </div>

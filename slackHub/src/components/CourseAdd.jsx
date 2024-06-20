@@ -9,25 +9,20 @@ import {
 import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
-import Typography from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
 
 const CourseAdd = () => {
   const navigate = useNavigate()
-  const { instructorId } = useParams()
-
   const [formValues, setFormValues] = useState({
-    courseName: '',
+    name: '',
     Description: ''
   })
+  const { instructorId } = useParams()
+  console.log(instructorId)
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
-  console.log(instructorId)
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -40,7 +35,7 @@ const CourseAdd = () => {
       console.error(`error in adding new course ${err}`)
     }
     setFormValues({
-      courseName: '',
+      name: '',
       Description: ''
     })
     navigate('/')
