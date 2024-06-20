@@ -28,7 +28,7 @@ const InstructorPage = ({ user }) => {
     getCourse()
   }, [user])
   console.log(`courses on the instructor page ==> ${courses}`)
-  console.log(`instructor ID ${user}`)
+  console.log(`instructor ID ${user?.id}`)
 
   if (isLoading) {
     return <p>Loading...</p>
@@ -36,11 +36,7 @@ const InstructorPage = ({ user }) => {
   return (
     <div>
       <section>
-        <button
-          onClick={() =>
-            navigate('/addcourse', { state: { instructorId: user?.id } })
-          }
-        >
+        <button onClick={() => navigate(`/addcourse/${user?.id}`)}>
           Add New Course
         </button>
         {courses.map((course) => (
