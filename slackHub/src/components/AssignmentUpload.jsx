@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 const AssignmentUpload = ({ courseId, user }) => {
-  const history = useHistory()
+  const history = history()
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
   const [file, setFile] = useState(null)
@@ -38,7 +38,7 @@ const AssignmentUpload = ({ courseId, user }) => {
     }
   }
 
-  if (!user || !user.isInstructor) {
+  if (!user || !user.type) {
     return (
       <div>You are not authorized to upload assignments for this course.</div>
     )

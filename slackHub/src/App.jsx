@@ -6,13 +6,14 @@ import SignIn from './pages/SignIn'
 import Home from './pages/Home'
 import { CheckSession } from './services/Auth'
 import Nav from './components/Nav'
-import InstructorPage from './pages/InstructorPage'
-//import StudentPage from "./pages/StudentPage"
 import Course from './pages/Course'
 import './App.css'
 import { useEffect } from 'react'
 import About from './pages/About'
 import CourseAdd from './components/CourseAdd'
+import AssignmentUpload from './components/AssignmentUpload'
+import Assignment from './components/Assignment'
+import InstructorPage from "./pages/InstructorPage"
 
 function App() {
   const [user, setUser] = useState(null)
@@ -29,7 +30,7 @@ function App() {
   }
   useEffect(() => {
     const token = localStorage.getItem('token')
-    // Check if token exists before requesting to validate the token
+
     if (token) {
       checkToken()
     }
@@ -54,15 +55,16 @@ function App() {
             ) : null}
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn setUser={setUser} />} />
-
             <Route path="/register" element={<Register />} />
-
-            {/* <Route path="/student" element={<StudentPage />} /> */}
-
             <Route path="/about" element={<About />} />
-
             <Route path="/view/course/:courseId" element={<Course />} />
             <Route path="/addcourse" element={<CourseAdd />} />
+            {user && user.isInstructor && (
+              <Route
+                path="/upload/assignment/:courseId"
+                element={<AssignmentUpload />}
+              />
+            )}
           </Routes>
         </main>
       </div>
