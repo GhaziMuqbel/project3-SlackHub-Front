@@ -66,6 +66,7 @@ function App() {
             <Route path="/about" element={<About />} />
 
             <Route path="/view/course/:courseId" element={<Course />} />
+<<<<<<< HEAD
 
             <Route path="/addcourse" element={<CourseAdd />} />
 
@@ -73,6 +74,9 @@ function App() {
               path="/view/CourseDetails/:courseId"
               element={<CourseDetails />}
             /> */}
+=======
+            <Route path="/addcourse/:instructorId" element={<CourseAdd />} />
+>>>>>>> bd0467b (done adding the add course page)
           </Routes>
         </main>
       </div>
