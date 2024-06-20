@@ -1,6 +1,3 @@
-import './App.css'
-import { useEffect } from 'react'
-import About from './pages/About'
 import { useState } from 'react'
 import Forms from './components/Forms'
 import { Route, Routes } from 'react-router'
