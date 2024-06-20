@@ -1,5 +1,5 @@
-import React from "react"
-import { Link } from "react-router-dom"
+import React from 'react'
+import { Link } from 'react-router-dom'
 // import About from '../pages/About'
 
 const Nav = ({ user, handleLogOut }) => {
@@ -15,6 +15,9 @@ const Nav = ({ user, handleLogOut }) => {
         </Link>
       </div>
       <nav className="nav-links">
+        <Link to="/instructor" className="nav-link">
+          Instructor
+        </Link>
         <Link to="/About" className="nav-link">
           About Us
         </Link>
@@ -26,6 +29,9 @@ const Nav = ({ user, handleLogOut }) => {
           </>
         ) : (
           <>
+            <Link to="/instructor" className="nav-link">
+              Instructor
+            </Link>
             <Link to="/register" className="nav-link">
               Register
             </Link>
