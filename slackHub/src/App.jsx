@@ -28,8 +28,8 @@ function App() {
     setUser(user)
   }
   useEffect(() => {
-    const token = localStorage.getItem('token')
-
+    const token = localStorage.getItem("token")
+    // Check if token exists before requesting to validate the token
     if (token) {
       checkToken()
     }
@@ -54,8 +54,16 @@ function App() {
             ) : null}
             <Route path="/" element={<Home />} />
             <Route path="/signin" element={<SignIn setUser={setUser} />} />
+
             <Route path="/register" element={<Register />} />
+            <Route
+              path="/view/instructorcourse/:courseId"
+              element={<CourseDetails />}
+            />
+            <Route path="/addstudents/:courseId" element={<AddStudent />} />
+
             <Route path="/about" element={<About />} />
+
             <Route path="/view/course/:courseId" element={<Course />} />
             <Route path="/addcourse" element={<CourseAdd />} />
             <Route path="/addcourse/:instructorId" element={<CourseAdd />} />
