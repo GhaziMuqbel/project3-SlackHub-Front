@@ -1,20 +1,20 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import {
   TextField,
   Button,
   Checkbox,
   FormControlLabel,
-  Typography
-} from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import { useParams } from 'react-router-dom'
-import axios from 'axios'
+  Typography,
+} from "@mui/material"
+import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import axios from "axios"
 
 const CourseAdd = () => {
   const navigate = useNavigate()
   const [formValues, setFormValues] = useState({
-    name: '',
-    Description: ''
+    name: "",
+    Description: "",
   })
   const { instructorId } = useParams()
   console.log(instructorId)
@@ -30,15 +30,15 @@ const CourseAdd = () => {
         ` http://localhost:3001/course/newCourse/${instructorId}`,
         formValues
       )
-      console.log('Course created successfully!', response.data)
+      console.log("Course created successfully!", response.data)
     } catch (err) {
       console.error(`error in adding new course ${err}`)
     }
     setFormValues({
-      name: '',
-      Description: ''
+      name: "",
+      Description: "",
     })
-    navigate('/')
+    navigate("/")
   }
 
   return (
