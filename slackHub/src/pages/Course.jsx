@@ -27,7 +27,7 @@ const Course = () => {
   }, [])
   console.log(`assignments ==> ${assignments}`)
   return (
-    <div>
+    <div className="assig">
       {assignments?.map((assignment) => (
         <div key={assignment._id}>
           <Assignment

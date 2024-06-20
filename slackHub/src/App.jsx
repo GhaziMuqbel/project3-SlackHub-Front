@@ -57,6 +57,7 @@ function App() {
 
             <Route path="/register" element={<Register />} />
 
+            {/* <Route path="/instructor" element={<InstructorPage />} /> */}
             {/* <Route path="/student" element={<StudentPage />} /> */}
 
             <Route path="/about" element={<About />} />
