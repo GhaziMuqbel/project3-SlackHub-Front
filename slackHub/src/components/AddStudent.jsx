@@ -5,28 +5,28 @@ const AddStudent = () => {
     username: "",
     email: "",
   }
-  const [formState, setFormState] = useState([])
+  const [studentForm, setStudentForm] = useState(initialState)
 
   const handleChange = (event) => {
-    setFormState({ ...formState, [event.target.id]: event.target.value })
+    setStudentForm({ ...studentForm, [event.target.id]: event.target.value })
   }
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(formState)
+    console.log(studentForm)
 
-    setFormState(initialState)
+    setStudentForm(initialState)
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div id="username" className="Form">
-        <label htmlFor="username">Username:</label>
+        <label htmlFor="username">Student name:</label>
         <input
           id="username"
           type="text"
           onChange={handleChange}
-          value={formState.username}
+          value={studentForm.username}
         />
       </div>
 
@@ -36,7 +36,7 @@ const AddStudent = () => {
           id="email"
           type="email"
           onChange={handleChange}
-          value={formState.email}
+          value={studentForm.email}
         />
       </div>
     </form>

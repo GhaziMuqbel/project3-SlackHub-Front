@@ -3,17 +3,15 @@ import axios from "axios"
 import AddStudent from "../components/AddStudent"
 import { useEffect, useState } from "react"
 // import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom"
+// import { useParams } from "react-router-dom"
 
 const CourseDetails = () => {
   const [students, setStudents] = useState(null)
   // const navigate = useNavigate()
-  const { studentId } = useParams()
+  // const { studentId } = useParams()
 
   const getStudents = async () => {
-    const response = await axios.get(
-      `http://localhost:3001/course/getassignments/${studentId}`
-    )
+    const response = await axios.get(`http://localhost:3001/course/${courseId}`)
     console.log(response.data)
     setStudents(response.data)
   }

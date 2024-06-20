@@ -1,18 +1,18 @@
-import { useState } from 'react'
-import Forms from './components/Forms'
-import { Route, Routes } from 'react-router'
-import Register from './pages/Register'
-import SignIn from './pages/SignIn'
-import Home from './pages/Home'
-import { CheckSession } from './services/Auth'
-import Nav from './components/Nav'
-import InstructorPage from './pages/InstructorPage'
-//import StudentPage from "./pages/StudentPage"
-import Course from './pages/Course'
-import './App.css'
-import { useEffect } from 'react'
-import About from './pages/About'
-import CourseAdd from './components/CourseAdd'
+import { useState } from "react"
+// import Forms from './components/Forms'
+import { Route, Routes } from "react-router"
+import Register from "./pages/Register"
+import SignIn from "./pages/SignIn"
+import Home from "./pages/Home"
+import { CheckSession } from "./services/Auth"
+import Nav from "./components/Nav"
+// import InstructorPage from "./pages/InstructorPage"
+// import StudentPage from "./pages/StudentPage"
+import Course from "./pages/Course"
+// import CourseDetails from "./pages/CourseDetails"
+import "./App.css"
+import { useEffect } from "react"
+import About from "./pages/About"
 
 function App() {
   const [user, setUser] = useState(null)
@@ -28,7 +28,7 @@ function App() {
     setUser(user)
   }
   useEffect(() => {
-    const token = localStorage.getItem('token')
+    const token = localStorage.getItem("token")
     // Check if token exists before requesting to validate the token
     if (token) {
       checkToken()
@@ -62,7 +62,11 @@ function App() {
             <Route path="/about" element={<About />} />
 
             <Route path="/view/course/:courseId" element={<Course />} />
-            <Route path="/addcourse" element={<CourseAdd />} />
+
+            {/* <Route
+              path="/view/CourseDetails/:courseId"
+              element={<CourseDetails />}
+            /> */}
           </Routes>
         </main>
       </div>
