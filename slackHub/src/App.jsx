@@ -24,14 +24,8 @@ function App() {
 
   const checkToken = async () => {
     const user = await CheckSession()
+    console.log(`user in the checkToken  ${JSON.stringify(user)}`)
     setUser(user)
-  }
-  const checkUser = () => {
-    // Retrieve user details from localStorage
-    const storedUser = localStorage.getItem('user')
-    if (storedUser) {
-      setUser(JSON.parse(storedUser))
-    }
   }
   useEffect(() => {
     const token = localStorage.getItem('token')
@@ -52,7 +46,10 @@ function App() {
               user.type ? (
                 <Route path="/" element={<Home />} />
               ) : (
-                <Route path="/instructor" element={<InstructorPage />} />
+                <Route
+                  path="/instructor"
+                  element={<InstructorPage user={user} />}
+                />
               )
             ) : null}
             <Route path="/" element={<Home />} />
@@ -60,10 +57,6 @@ function App() {
 
             <Route path="/register" element={<Register />} />
 
-            <Route
-              path="/instructor"
-              element={<InstructorPage user={user} />}
-            />
             {/* <Route path="/student" element={<StudentPage />} /> */}
 
             <Route path="/about" element={<About />} />

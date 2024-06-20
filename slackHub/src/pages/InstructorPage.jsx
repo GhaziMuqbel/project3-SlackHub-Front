@@ -4,8 +4,9 @@ import { useNavigate } from 'react-router-dom'
 import CourseAdd from '../components/CourseAdd'
 import axios from 'axios'
 
-const instructor = ({ user }) => {
+const InstructorPage = ({ user }) => {
   const [courses, setCourses] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
   const navigate = useNavigate()
 
   const handleCourseClick = (courseId) => {
@@ -13,6 +14,10 @@ const instructor = ({ user }) => {
   }
 
   useEffect(() => {
+    console.log(user)
+    if (user) {
+      setIsLoading(false)
+    }
     const getCourse = async () => {
       const response = await axios.get(
         'http://localhost:3001/course/getcourses'
@@ -21,10 +26,13 @@ const instructor = ({ user }) => {
       setCourses(response.data)
     }
     getCourse()
-  }, [])
+  }, [user])
   console.log(`courses on the instructor page ==> ${courses}`)
-  console.log(`instructor ID ${user?.id}`)
+  console.log(`instructor ID ${user}`)
 
+  if (isLoading) {
+    return <p>Loading...</p>
+  }
   return (
     <div>
       <section>
@@ -51,4 +59,4 @@ const instructor = ({ user }) => {
   )
 }
 
-export default instructor
+export default InstructorPage
