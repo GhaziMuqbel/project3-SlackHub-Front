@@ -1,28 +1,33 @@
-import React, { useState } from "react"
+import React, { useState } from 'react'
 import {
   TextField,
   Button,
   Checkbox,
   FormControlLabel,
-  Typography,
-} from "@mui/material"
-import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom"
-import axios from "axios"
+  Typography
+} from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
+import Typography from '@mui/material'
+import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import axios from 'axios'
 
-const Register = ({ instructorId }) => {
+const CourseAdd = () => {
   const navigate = useNavigate()
   const { instructorId } = useParams()
 
   const [formValues, setFormValues] = useState({
-    courseName: "",
-    Description: "",
+    courseName: '',
+    Description: ''
   })
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
   }
 
+  console.log(instructorId)
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
@@ -30,15 +35,15 @@ const Register = ({ instructorId }) => {
         ` http://localhost:3001/course/newCourse/${instructorId}`,
         formValues
       )
-      console.log("Course created successfully!", response.data)
+      console.log('Course created successfully!', response.data)
     } catch (err) {
       console.error(`error in adding new course ${err}`)
     }
     setFormValues({
-      courseName: "",
-      Description: "",
+      courseName: '',
+      Description: ''
     })
-    navigate("/")
+    navigate('/')
   }
 
   return (
@@ -49,9 +54,9 @@ const Register = ({ instructorId }) => {
       <form className="col" onSubmit={handleSubmit}>
         <TextField
           label="Course Name"
-          name="courseName"
+          name="name"
           type="text"
-          value={formValues.courseName}
+          value={formValues.name}
           onChange={handleChange}
           variant="outlined"
           margin="normal"
@@ -88,4 +93,4 @@ const Register = ({ instructorId }) => {
   )
 }
 
-export default Register
+export default CourseAdd
