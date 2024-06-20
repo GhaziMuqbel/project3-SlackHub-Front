@@ -12,8 +12,10 @@ import { useEffect } from 'react'
 import About from './pages/About'
 import CourseAdd from './components/CourseAdd'
 import AssignmentUpload from './components/AssignmentUpload'
-import Assignment from './components/Assignment'
 import InstructorPage from './pages/InstructorPage'
+import CourseDetails from './components/ReviewDetail'
+import AddStudent from './components/AddStudent'
+
 function App() {
   const [user, setUser] = useState(null)
 
