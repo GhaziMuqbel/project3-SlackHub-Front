@@ -1,12 +1,7 @@
-
-
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
-  background-image: linear-gradient(90deg, #cdcde4 0%, #c3eff7 100%); 
- 
- 
-
+  background-image: linear-gradient(90deg, #cdcde4 0%, #c3eff7 100%);
 }
 
 h1 {
@@ -23,10 +18,9 @@ p {
   text-justify: inter-word;
 }
 
-
 header {
-  background-color: #1d0a3f; 
-  color: #ffffff; 
+  background-color: #1d0a3f;
+  color: #ffffff;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -40,7 +34,7 @@ header {
 }
 
 .logo {
-  height: 40px; 
+  height: 40px;
   margin-right: 10px;
 }
 
@@ -50,23 +44,21 @@ header {
 }
 
 .nav-links a {
-  color: #ffffff; 
+  color: #ffffff;
   text-decoration: none;
   margin-left: 20px;
 }
 
 .nav-links a:hover {
-  text-decoration: underline; 
+  text-decoration: underline;
 }
-
 
 .main-content {
   padding: 20px;
 }
 
-
 .signincol {
-  max-width: 400px; 
+  max-width: 400px;
   margin: 20px auto;
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.13);
@@ -74,20 +66,27 @@ header {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
- 
+}
+
+.assig {
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
 .signincol h4 {
-  margin-bottom: 20px; 
-  
+  margin-bottom: 20px;
 }
-
 
 form {
   display: flex;
   flex-direction: column;
 }
-
 
 input[type="text"],
 input[type="email"],
@@ -95,56 +94,47 @@ input[type="password"],
 input[type="checkbox"] {
   margin-bottom: 15px;
   padding: 10px;
-  border: 1px solid #ccc; 
+  border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
   background-color: aliceblue;
-  
 }
 
 input[type="checkbox"] {
-  width: auto; 
+  width: auto;
   margin-top: 5px;
 }
-
 
 button {
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  background-color: #7b1fa2; 
-  color: #ffffff; 
+  background-color: #7b1fa2;
+  color: #ffffff;
   font-size: 16px;
 }
 
 button:hover {
-  background-color: #5e35b1; 
+  background-color: #5e35b1;
 }
 
-
 a {
-  color: #7b1fa2; 
+  color: #7b1fa2;
   text-decoration: none;
 }
 
 a:hover {
-
-  text-decoration: underline; 
-=======
-  text-decoration: underline; /
-
+  text-decoration: underline;
 }
 
-
 .about-container {
-
-  max-width: 600px; 
+  max-width: 600px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #ffffff; 
+  background-color: #ffffff;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
   max-width: 600px;
   margin: 20px auto;
@@ -154,27 +144,23 @@ a:hover {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-
 }
 
 .about-container h2 {
-  font-size: 24px; 
-  margin-bottom: 10px; 
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 .about-container p {
-
   font-size: 16px;
-  line-height: 1.6; 
+  line-height: 1.6;
 }
-
 
 .section-title {
   font-size: 20px;
   color: #7b1fa2;
   margin-bottom: 10px;
 
-  font-size: 16px; 
-  line-height: 1.6; 
-
+  font-size: 16px;
+  line-height: 1.6;
 }

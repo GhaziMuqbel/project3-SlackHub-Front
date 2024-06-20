@@ -1,20 +1,22 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import {
   TextField,
   Button,
   Checkbox,
   FormControlLabel,
-  Typography
-} from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import { useParams} from 'react-router-dom'
-import axios from 'axios'
+  Typography,
+} from "@mui/material"
+import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import axios from "axios"
 
-const Register = ({instructorId}) => {
+const Register = ({ instructorId }) => {
   const navigate = useNavigate()
+  const { instructorId } = useParams()
+
   const [formValues, setFormValues] = useState({
-   courseName: '',
-    Description: ''
+    courseName: "",
+    Description: "",
   })
 
   const handleChange = (e) => {
@@ -23,20 +25,20 @@ const Register = ({instructorId}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    try{
-        const response= await axios.post(` http://localhost:3001/course/newCourse/${instructorId}`,
-        formValues)
-        console.log('Course created successfully!', response.data);
-    }
-    catch(err)
-    {
-        console.error(`error in adding new course ${err}`)
+    try {
+      const response = await axios.post(
+        ` http://localhost:3001/course/newCourse/${instructorId}`,
+        formValues
+      )
+      console.log("Course created successfully!", response.data)
+    } catch (err) {
+      console.error(`error in adding new course ${err}`)
     }
     setFormValues({
-       courseName: '',
-    Description: ''
+      courseName: "",
+      Description: "",
     })
-    navigate('/')
+    navigate("/")
   }
 
   return (
@@ -67,7 +69,7 @@ const Register = ({instructorId}) => {
           fullWidth
           required
         />
-        
+
         <FormControlLabel
           control={
             <Checkbox
@@ -78,12 +80,7 @@ const Register = ({instructorId}) => {
           }
           label="User Type"
         />
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-        >
+        <Button type="submit" variant="contained" color="primary" fullWidth>
           Add Course
         </Button>
       </form>
