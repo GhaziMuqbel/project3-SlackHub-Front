@@ -12,10 +12,12 @@ import { useEffect } from 'react'
 import About from './pages/About'
 import CourseAdd from './components/CourseAdd'
 import AssignmentUpload from './components/AssignmentUpload'
+import AssignmentDetail from './components/AssignmentDetail'
 import InstructorPage from './pages/InstructorPage'
 import CourseDetails from './components/ReviewDetail'
 import AddStudent from './components/AddStudent'
-
+import CourseCard from './components/CourseCard'
+import Assignment from './pages/Assignment'
 function App() {
   const [user, setUser] = useState(null)
 
@@ -30,7 +32,7 @@ function App() {
     setUser(user)
   }
   useEffect(() => {
-    const token = localStorage.getItem("token")
+    const token = localStorage.getItem('token')
     // Check if token exists before requesting to validate the token
     if (token) {
       checkToken()
@@ -73,6 +75,7 @@ function App() {
               path="/upload/assignment/:courseId"
               element={<AssignmentUpload />}
             />
+            
           </Routes>
         </main>
       </div>
