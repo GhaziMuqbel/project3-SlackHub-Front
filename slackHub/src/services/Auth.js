@@ -1,9 +1,9 @@
-import SlackHub from "./api"
+import SlackHub from './api'
 
 export const SignInUser = async (data) => {
   try {
-    const res = await SlackHub.post("/auth/login", data)
-    localStorage.setItem("token", res.data.token)
+    const res = await SlackHub.post('/auth/login', data)
+    localStorage.setItem('token', res.data.token)
 
     // Set the current signed in users token to localStorage
     return res.data.user
@@ -14,7 +14,7 @@ export const SignInUser = async (data) => {
 
 export const RegisterUser = async (data) => {
   try {
-    const res = await SlackHub.post("/auth/register", data)
+    const res = await SlackHub.post('/auth/Register', data)
     return res.data
   } catch (error) {
     throw error
@@ -24,7 +24,7 @@ export const RegisterUser = async (data) => {
 export const CheckSession = async () => {
   try {
     // Checks if the current token if it exists is valid
-    const res = await SlackHub.get("/auth/session")
+    const res = await SlackHub.get('/auth/session')
     return res.data
   } catch (error) {
     throw error
