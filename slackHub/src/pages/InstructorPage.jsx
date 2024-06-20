@@ -6,7 +6,6 @@ import axios from "axios"
 
 const instructor = ({user}) => {
   const [courses, setCourses] = useState([])
-  const [userId, setUserId] = useState('')
   const navigate = useNavigate()
   
   const handleCourseClick = (courseId) => {
@@ -16,7 +15,7 @@ const instructor = ({user}) => {
   useEffect(() => {
     const getCourse = async () => {
         const response = await axios.get("http://localhost:3001/course/getcourses")
-        //console.log(response.data)
+       
         setCourses(response.data)
       }
       getCourse()
@@ -24,7 +23,7 @@ const instructor = ({user}) => {
  console.log(`courses on the instructor page ==> ${courses}`)
  console.log(`instructor ID ${user?.id}`);
 
- //console.log(props.user)
+ 
   return (
     <div>
       <section>
