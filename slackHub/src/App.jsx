@@ -11,11 +11,15 @@ import './App.css'
 import { useEffect } from 'react'
 import About from './pages/About'
 import CourseAdd from './components/CourseAdd'
+import CourseDetails from './pages/CourseDetails'
 import AssignmentUpload from './components/AssignmentUpload'
 
 import InstructorPage from './pages/InstructorPage'
-import CourseDetails from './components/ReviewDetail'
+import Students from './pages/Students'
+//import CourseDetails from './components/ReviewDetail'
 import AddStudent from './components/AddStudent'
+import AssignmentDetail from './components/AssignmentDetail'
+
 
 function App() {
   const [user, setUser] = useState(null)
@@ -45,35 +49,30 @@ function App() {
         <Nav user={user} handleLogOut={handleLogOut} />
         <main>
           <Routes>
-            {user ? (
-              user.type ? (
-                <Route path="/" element={<Home />} />
-              ) : (
-                <Route
-                  path="/instructor"
-                  element={<InstructorPage user={user} />}
-                />
-              )
-            ) : null}
-            <Route path="/" element={<Home />} />
-            <Route path="/signin" element={<SignIn setUser={setUser} />} />
-
-            <Route path="/register" element={<Register />} />
-            <Route
-              path="/view/instructorcourse/:courseId"
-              element={<CourseDetails />}
-            />
-            <Route path="/addstudents/:courseId" element={<AddStudent />} />
-
-            <Route path="/about" element={<About />} />
-
-            <Route path="/view/course/:courseId" element={<Course />} />
-            <Route path="/addcourse" element={<CourseAdd />} />
-            <Route path="/addcourse/:instructorId" element={<CourseAdd />} />
-            <Route
-              path="/upload/assignment/:courseId"
-              element={<AssignmentUpload />}
-            />
+          {user ? (
+    <>
+      {user.type ? (
+        <Route path="/instructor" element={<InstructorPage user={user} />} />
+      ) : (
+        <Route path="/student" element={<Students user={user} />} />
+      )}
+      <Route path="/view/instructorcourse/:courseId" element={<CourseDetails />} />
+      <Route path="/addstudents/:courseId" element={<AddStudent />} />
+      <Route path="/course/details/:assignmentId" element={<AssignmentDetail user={user} />} />
+      <Route path="/about" element={<About />} />
+      <Route path="/view/assignmentUpload/:courseId" element={<AssignmentUpload />} />
+      <Route path="/view/course/:courseId" element={<Course user={user}/>} />
+      <Route path="/addcourse/:instructorId" element={<CourseAdd />} />
+      <Route path="/upload/assignment/:courseId" element={<AssignmentUpload />} />
+    </>
+  ) : (
+    <>
+      <Route path="/" element={<Home />} />
+      <Route path="/signin" element={<SignIn setUser={setUser} />} />
+      <Route path="/register" element={<Register />} />
+    </>
+  )}
+            
           </Routes>
         </main>
       </div>

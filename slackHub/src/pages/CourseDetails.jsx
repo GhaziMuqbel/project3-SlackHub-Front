@@ -33,6 +33,11 @@ const CourseDetails = () => {
         <button onClick={() => navigate(`/addstudents/${courseId}`)}>
           Add Students
         </button>
+        <div>
+        <button onClick={() => navigate(`/view/course/${courseId}`)}>
+          Assignments
+        </button>
+        </div>
       </div>
       {students.name}
       {students.Description}
@@ -41,6 +46,7 @@ const CourseDetails = () => {
           {student.username}
           {student.email}
         </div>
+        
       ))}
     </div>
   ) : (
