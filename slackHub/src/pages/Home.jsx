@@ -4,36 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Home = () => {
-  const [courses, setCourses] = useState([])
-  const navigate = useNavigate()
-
-  const getCourse = async () => {
-    const response = await axios.get('http://localhost:3001/course/getcourses')
-
-    setCourses(response.data)
-  }
-
-  const handleCourseClick = (courseId) => {
-    navigate(`/view/course/${courseId}`)
-  }
-
-  useEffect(() => {
-    getCourse()
-  }, [])
 
   return (
     <div>
-      <section>
-        {courses.map((course) => (
-          <div key={course._id}>
-            <CourseCard
-              title={course.name}
-              description={course.Description}
-              onClick={() => handleCourseClick(course._id)}
-            />
-          </div>
-        ))}
-      </section>
+      this is the homepage Design it
     </div>
   )
 }

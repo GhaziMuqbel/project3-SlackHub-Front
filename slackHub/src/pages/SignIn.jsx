@@ -16,7 +16,11 @@ const SignIn = ({ setUser }) => {
     const payload = await SignInUser(formValues)
     setFormValues({ email: "", password: "" })
     setUser(payload)
-    navigate("/")
+    if (payload.type) {
+      navigate('/instructor')
+    } else {
+      navigate('/student')
+    }
   }
 
   return (

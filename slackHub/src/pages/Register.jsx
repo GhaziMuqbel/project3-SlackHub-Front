@@ -16,12 +16,14 @@ const Register = () => {
     email: '',
     password: '',
     confirmPassword: '',
-    userType: true
+    userType: false
   })
 
   const handleChange = (e) => {
-    setFormValues({ ...formValues, [e.target.name]: e.target.value })
-  }
+    const { name, value, type, checked } = e.target;
+    const newValue = type === 'checkbox' ? checked : value;
+    setFormValues({ ...formValues, [name]: newValue });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -36,7 +38,7 @@ const Register = () => {
       email: '',
       password: '',
       confirmPassword: '',
-      userType: true
+      userType: false
     })
     navigate('/signin')
   }
@@ -99,7 +101,7 @@ const Register = () => {
               name="userType"
             />
           }
-          label="User Type"
+          label="Instructor "
         />
         <Button
           type="submit"
@@ -108,8 +110,7 @@ const Register = () => {
           fullWidth
           disabled={
             !formValues.email ||
-            formValues.password !== formValues.confirmPassword ||
-            !formValues.userType
+            formValues.password !== formValues.confirmPassword 
           }
         >
           Register
