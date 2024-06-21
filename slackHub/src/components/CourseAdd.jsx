@@ -1,21 +1,23 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
 import {
   TextField,
   Button,
   Checkbox,
   FormControlLabel,
-  Typography
-} from '@mui/material'
-import { useNavigate } from 'react-router-dom'
-import { useParams} from 'react-router-dom'
-import axios from 'axios'
+  Typography,
+} from "@mui/material"
+import { useNavigate } from "react-router-dom"
+import { useParams } from "react-router-dom"
+import axios from "axios"
 
-const Register = ({instructorId}) => {
+const CourseAdd = () => {
   const navigate = useNavigate()
   const [formValues, setFormValues] = useState({
-   courseName: '',
-    Description: ''
+    name: "",
+    Description: "",
   })
+  const { instructorId } = useParams()
+  console.log(instructorId)
 
   const handleChange = (e) => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value })
@@ -23,20 +25,20 @@ const Register = ({instructorId}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    try{
-        const response= await axios.post(` http://localhost:3001/course/newCourse/${instructorId}`,
-        formValues)
-        console.log('Course created successfully!', response.data);
-    }
-    catch(err)
-    {
-        console.error(`error in adding new course ${err}`)
+    try {
+      const response = await axios.post(
+        ` http://localhost:3001/course/newCourse/${instructorId}`,
+        formValues
+      )
+      console.log("Course created successfully!", response.data)
+    } catch (err) {
+      console.error(`error in adding new course ${err}`)
     }
     setFormValues({
-       courseName: '',
-    Description: ''
+      name: "",
+      Description: "",
     })
-    navigate('/')
+    navigate("/")
   }
 
   return (
@@ -47,9 +49,9 @@ const Register = ({instructorId}) => {
       <form className="col" onSubmit={handleSubmit}>
         <TextField
           label="Course Name"
-          name="courseName"
+          name="name"
           type="text"
-          value={formValues.courseName}
+          value={formValues.name}
           onChange={handleChange}
           variant="outlined"
           margin="normal"
@@ -67,7 +69,7 @@ const Register = ({instructorId}) => {
           fullWidth
           required
         />
-        
+
         <FormControlLabel
           control={
             <Checkbox
@@ -78,12 +80,7 @@ const Register = ({instructorId}) => {
           }
           label="User Type"
         />
-        <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          fullWidth
-        >
+        <Button type="submit" variant="contained" color="primary" fullWidth>
           Add Course
         </Button>
       </form>
@@ -91,4 +88,4 @@ const Register = ({instructorId}) => {
   )
 }
 
-export default Register
+export default CourseAdd
