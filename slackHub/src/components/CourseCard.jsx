@@ -10,3 +10,4 @@ const CourseCard = ({ onClick, title, description }) => {
 }
 
 export default CourseCard
+

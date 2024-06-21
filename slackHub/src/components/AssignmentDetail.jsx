@@ -1,25 +1,23 @@
-import React from 'react'
-import useState from 'react'
-import useEffect from 'react'
-import axios from 'axios'
+import React, { useState, useEffect } from 'react'; // Correct import for useState and useEffect
+import axios from 'axios';
 
-const AssignmentDetail = ({ onClick, title, description, courseid }) => {
-  const [detail, setDetail] = useState(null)
+const AssignmentDetail = ({ onClick, courseid }) => {
+  const [detail, setDetail] = useState(null);
 
   useEffect(() => {
     const getDetails = async () => {
       try {
-        const response = await axios.get(
-          `http://localhost:3001/assignment/details/${courseid}`
-        )
-        setDetail(response.data) 
+        const response = await axios.get(`http://localhost:3001/assignment/details/${courseid}`);
+        setDetail(response.data);
       } catch (error) {
-        console.error('Error fetching assignment details:', error)
+        console.error('Error fetching assignment details:', error);
       }
-    }
+    };
 
-    getDetails()
-  },)
+    if (courseid) {
+      getDetails();
+    }
+  }, [courseid]); // Adding courseid as a dependency to useEffect
 
   return (
     <div className="assig" onClick={onClick}>
@@ -32,7 +30,8 @@ const AssignmentDetail = ({ onClick, title, description, courseid }) => {
         <p>Loading assignment details...</p>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default AssignmentDetail
+export default AssignmentDetail;
+

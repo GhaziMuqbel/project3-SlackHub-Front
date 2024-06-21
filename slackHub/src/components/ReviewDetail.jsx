@@ -18,8 +18,8 @@ const ReviewDetail = () => {
   return (
     <div>
       <h1>Review Detail</h1>
-      <p>Reviewer: {review.reviewer.name}</p>
-      <p>Assignment: {review.assignment.title}</p>
+      <p>Reviewer: {review.reviewer}</p>
+      <p>Assignment: {review.assignment}</p>
       <p>Content: {review.content}</p>
       <p>Rating: {review.rating}</p>
     </div>

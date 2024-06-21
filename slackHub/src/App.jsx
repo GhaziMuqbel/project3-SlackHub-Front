@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 import About from './pages/About'
 import CourseAdd from './components/CourseAdd'
 import AssignmentUpload from './components/AssignmentUpload'
-
+// import AssignmentDetail from './pages/AssignmentDetail';
 import InstructorPage from './pages/InstructorPage'
 import CourseDetails from './components/ReviewDetail'
 import AddStudent from './components/AddStudent'
@@ -63,6 +63,10 @@ function App() {
               path="/view/instructorcourse/:courseId"
               element={<CourseDetails />}
             />
+            {/* <Route
+              path="/assignment/details/"
+              element={<AssignmentDetail />} */}
+            {/* /> */}
             <Route path="/addstudents/:courseId" element={<AddStudent />} />
 
             <Route path="/about" element={<About />} />
