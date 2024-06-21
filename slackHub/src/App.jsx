@@ -16,8 +16,7 @@ import AssignmentDetail from './components/AssignmentDetail'
 import InstructorPage from './pages/InstructorPage'
 import CourseDetails from './components/ReviewDetail'
 import AddStudent from './components/AddStudent'
-import CourseCard from './components/CourseCard'
-import Assignment from './pages/Assignment'
+
 function App() {
   const [user, setUser] = useState(null)
 
@@ -75,7 +74,6 @@ function App() {
               path="/upload/assignment/:courseId"
               element={<AssignmentUpload />}
             />
-            
           </Routes>
         </main>
       </div>
