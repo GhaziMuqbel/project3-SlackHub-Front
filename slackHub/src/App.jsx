@@ -12,7 +12,7 @@ import { useEffect } from 'react'
 import About from './pages/About'
 import CourseAdd from './components/CourseAdd'
 import AssignmentUpload from './components/AssignmentUpload'
-import AssignmentDetail from './components/AssignmentDetail'
+
 import InstructorPage from './pages/InstructorPage'
 import CourseDetails from './components/ReviewDetail'
 import AddStudent from './components/AddStudent'
