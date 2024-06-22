@@ -45,10 +45,10 @@ const AssignmentUpload = () => {
   }
 
   return (
-    <div>
-      <h2>Upload Assignment</h2>
+    <div className="homepage">
+      <h2 className="homepage">Upload Assignment</h2>
       <form onSubmit={handleSubmit}>
-        <div>
+        <div className="homepage">
           <label>Title:</label>
           <input
             type="text"
@@ -57,7 +57,7 @@ const AssignmentUpload = () => {
             required
           />
         </div>
-        <div>
+        <div className="homepage">
           <label>Description:</label>
           <textarea
             value={description}
@@ -65,7 +65,7 @@ const AssignmentUpload = () => {
             required
           />
         </div>
-        <div>
+        <div className="homepage">
           <label>File:</label>
           <input
             type="file"

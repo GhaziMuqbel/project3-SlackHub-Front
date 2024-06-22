@@ -28,16 +28,17 @@ const CourseDetails = () => {
 
   return students ? (
     <div>
-      <div>
-        {" "}
+      <div className="addstudent">
         <button onClick={() => navigate(`/addstudents/${courseId}`)}>
           Add Students
         </button>
-        <div>
-          <button onClick={() => navigate(`/view/course/${courseId}`)}>
-            Assignments
-          </button>
-        </div>
+
+        <button
+          className="addassig"
+          onClick={() => navigate(`/view/course/${courseId}`)}
+        >
+          Assignments
+        </button>
       </div>
       <div className="signincol">
         <li>{students.name}</li>

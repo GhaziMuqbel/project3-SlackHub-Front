@@ -25,7 +25,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle box shadow for header */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .logo-wrapper {
@@ -68,7 +68,28 @@ header {
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
 }
 
-/* .upliadassig {
+.addassig {
+  margin-right: auto;
+  margin: 5px;
+}
+
+.homepage {
+  max-width: 800px;
+  margin: 20px auto;
+  margin-left: auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.13);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
+}
+
+h1 {
+  text-align: center;
+}
+
+.upliadassig {
   max-width: 400px;
   margin: 20px auto;
   margin-left: auto;
@@ -78,7 +99,7 @@ header {
   backdrop-filter: blur(10px);
   border: 2px solid rgba(255, 255, 255, 0.1);
   box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-} */
+}
 
 li {
   padding: 5px;
