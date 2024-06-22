@@ -1,18 +1,14 @@
-import React from "react"
-import axios from "axios"
-import AddStudent from "../components/AddStudent"
-import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom"
+import React from 'react'
+import axios from 'axios'
+import AddStudent from '../components/AddStudent'
+import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 const CourseDetails = () => {
   const [students, setStudents] = useState(null)
   const navigate = useNavigate()
   const { courseId } = useParams()
-
-  // const handleAssignmentClick = (assignmentId) => {
-  //   navigate(`/course/details/${assignmentId}`)
-  // }
 
   useEffect(() => {
     const getStudents = async () => {
@@ -24,11 +20,11 @@ const CourseDetails = () => {
     }
     getStudents()
   }, [])
-  //console.log(`assignments ==> ${assignments}`)
 
   return students ? (
     <div>
-      <div className="addstudent">
+      <div>
+        {' '}
         <button onClick={() => navigate(`/addstudents/${courseId}`)}>
           Add Students
         </button>
