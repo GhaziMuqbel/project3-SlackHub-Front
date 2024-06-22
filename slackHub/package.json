@@ -18,6 +18,7 @@
     "codemirror": "^5.65.16",
     "node": "^22.3.0",
     "react": "^18.2.0",
+    "react-ace": "^11.0.1",
     "react-chat-engine-advanced": "^0.1.28",
     "react-chat-engine-pretty": "^0.1.8",
     "react-dom": "^18.2.0",
