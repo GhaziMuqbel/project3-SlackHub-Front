@@ -75,16 +75,14 @@ const AssignmentDetail = ({ user }) => {
 
           <div className="discussion-board">
             <h3>Discussion Board</h3>
-            {user?.type === true && (
-              <form onSubmit={handleNoteSubmit}>
-                <textarea
-                  value={newNote}
-                  onChange={(e) => setNewNote(e.target.value)}
-                  placeholder="Write your note here..."
-                />
-                <button type="submit">Add Note</button>
-              </form>
-            )}
+            <form onSubmit={handleNoteSubmit}>
+              <textarea
+                value={newNote}
+                onChange={(e) => setNewNote(e.target.value)}
+                placeholder="Write your note here..."
+              />
+              <button type="submit">Add Note</button>
+            </form>
             <div className="notes">
               {notes ? (
                 notes.split('\n').map((note, index) => (
