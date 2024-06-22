@@ -1,8 +1,9 @@
 import React, { useState } from "react"
 import axios from "axios"
 
-const AssignmentUpload = ({ courseId, user }) => {
-  const history = useHistory()
+import { useParams } from "react-router-dom"
+const AssignmentUpload = () => {
+  const { courseId } = useParams()
   const [title, setTitle] = useState("")
   const [description, setDescription] = useState("")
   const [file, setFile] = useState(null)
@@ -24,11 +25,15 @@ const AssignmentUpload = ({ courseId, user }) => {
     formData.append("file", file)
 
     try {
-      await axios.post(`/api/assignments/${courseId}`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      })
+      await axios.post(
+        `http://localhost:3001/assignment/${courseId}`, // Use courseId from props
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      )
 
       // history.push(`/courses/${courseId}`) // Navigate to the course page after successful upload
     } catch (error) {
@@ -40,7 +45,7 @@ const AssignmentUpload = ({ courseId, user }) => {
   }
 
   return (
-    <div className="upliadassig">
+    <div>
       <h2>Upload Assignment</h2>
       <form onSubmit={handleSubmit}>
         <div>
@@ -62,12 +67,10 @@ const AssignmentUpload = ({ courseId, user }) => {
         </div>
         <div>
           <label>File:</label>
-          <DropzoneArea
-            onChange={handleFileChange}
-            acceptedFiles={[".js", ".jsx", ".java", ".cpp", ".py"]}
-            dropzoneText="Drag and drop an assignment file here or click"
-            filesLimit={1}
-            showAlerts={false}
+          <input
+            type="file"
+            onChange={(e) => handleFileChange(e.target.files)}
+            required
           />
         </div>
         <button type="submit" disabled={uploading}>
