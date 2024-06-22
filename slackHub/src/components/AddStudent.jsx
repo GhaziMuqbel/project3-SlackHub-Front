@@ -49,7 +49,7 @@ const AddStudent = () => {
   }
 
   return (
-    <div>
+    <div className="signincol">
       <Typography variant="h4" gutterBottom>
         Add New Students
       </Typography>
@@ -82,7 +82,7 @@ const AddStudent = () => {
           />
         </div>
         <Button type="submit" variant="contained" color="primary" fullWidth>
-          Add Course
+          Add Student
         </Button>
       </form>
     </div>
