@@ -1,12 +1,12 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from "react"
+import { Link } from "react-router-dom"
 // import About from '../pages/About'
 
 const Nav = ({ user, handleLogOut }) => {
   return (
     <header>
       <div className="logo-wrapper">
-        <Link to="/">
+        <Link to="/student">
           <img
             className="logo"
             src="https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/002/567/953/datas/original.png"

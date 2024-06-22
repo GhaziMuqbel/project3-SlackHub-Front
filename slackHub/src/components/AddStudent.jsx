@@ -48,7 +48,7 @@ useEffect(()=>{
   }
 
   return (
-    <div>
+    <div className="signincol">
       <Typography variant="h4" gutterBottom>
         Add New Student
       </Typography>
