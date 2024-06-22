@@ -20,8 +20,8 @@ const About = () => {
           tools together to create an easy and simple means of communication
           between the student and the teacher. Of course, we will not be able to
           keep up with the features of the github site, but we will make
-          communication between students and the teacher and solving and
-          submitting assignments easier.
+          communication between students and the teacher, solving and submitting
+          assignments easier.
         </p>
       </div>
     </div>
