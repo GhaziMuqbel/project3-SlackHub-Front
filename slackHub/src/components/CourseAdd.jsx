@@ -38,7 +38,7 @@ const CourseAdd = () => {
       name: "",
       Description: "",
     })
-    navigate("/")
+    navigate("/instructor")
   }
 
   return (
@@ -70,16 +70,6 @@ const CourseAdd = () => {
           required
         />
 
-        <FormControlLabel
-          control={
-            <Checkbox
-              checked={formValues.userType}
-              onChange={handleChange}
-              name="userType"
-            />
-          }
-          label="User Type"
-        />
         <Button type="submit" variant="contained" color="primary" fullWidth>
           Add Course
         </Button>

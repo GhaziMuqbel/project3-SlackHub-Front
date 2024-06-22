@@ -8,7 +8,9 @@ const AssignmentDetail = ({ user }) => {
   const [isLoading, setIsLoading] = useState(true)
   const [notes, setNotes] = useState('')
   const [newNote, setNewNote] = useState('')
+  const [Files, setFiles] = useState(null)
   const navigate = useNavigate()
+  let uploadedFile = ""
 
   useEffect(() => {
     const getDetails = async () => {
@@ -63,6 +65,10 @@ const AssignmentDetail = ({ user }) => {
     navigate(`/view/assignmentUpload/${detail.course}`)
   }
 
+  const showPdf=(pdfFile)=>{
+    window.open(`http://localhost:3001/uploads/${pdfFile}`)
+    console.log(pdfFile)
+  }
   return (
     <div className="assignment-detail">
       {!isLoading ? (
@@ -99,6 +105,9 @@ const AssignmentDetail = ({ user }) => {
       ) : (
         <p>Loading assignment details...</p>
       )}
+      <button onClick={()=>showPdf(detail?.assignfile?.pdf)}>
+      Show File
+      </button>
     </div>
   )
 }

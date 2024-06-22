@@ -28,21 +28,28 @@ const CourseDetails = () => {
         <button onClick={() => navigate(`/addstudents/${courseId}`)}>
           Add Students
         </button>
-        <div>
-        <button onClick={() => navigate(`/view/course/${courseId}`)}>
+
+        <button
+          className="addassig"
+          onClick={() => navigate(`/view/course/${courseId}`)}
+        >
           Assignments
         </button>
-        </div>
       </div>
-      {students.name}
-      {students.Description}
-      {students?.Students.map((student) => (
-        <div key={student._id}>
-          {student.username}
-          {student.email}
-        </div>
-        
-      ))}
+      <div className="signincol">
+        <li>{students.name}</li>
+        {students.Description}
+      </div>
+      <div className="details">
+        {students?.Students.map((student) => (
+          <div className="coursdes">
+            <div key={student._id}>
+              <li>{student.username}</li>
+              <div>{student.email}</div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   ) : (
     <div>LOADING</div>
