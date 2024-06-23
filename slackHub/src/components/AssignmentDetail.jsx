@@ -6,11 +6,9 @@ const AssignmentDetail = ({ user }) => {
   const { assignmentId } = useParams()
   const [detail, setDetail] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [notes, setNotes] = useState('')
+  const [notes, setNotes] = useState([])
   const [newNote, setNewNote] = useState('')
-  const [Files, setFiles] = useState(null)
   const navigate = useNavigate()
-  let uploadedFile = ""
 
   useEffect(() => {
     const getDetails = async () => {
@@ -32,10 +30,10 @@ const AssignmentDetail = ({ user }) => {
           `http://localhost:3001/notes/get/${assignmentId}`
         )
         console.log('Notes response:', response.data)
-        setNotes(response.data)
+        setNotes(response.data.split('\n'))
       } catch (error) {
         console.error('Error fetching notes:', error)
-        setNotes('')
+        setNotes([])
       }
     }
 
@@ -54,7 +52,7 @@ const AssignmentDetail = ({ user }) => {
         userId: user.id,
         userName: user.name
       })
-      setNotes(response.data.notes)
+      setNotes(response.data.notes.split('\n'))
       setNewNote('')
     } catch (error) {
       console.error('Error adding note:', error)
@@ -65,10 +63,11 @@ const AssignmentDetail = ({ user }) => {
     navigate(`/view/assignmentUpload/${detail.course}`)
   }
 
-  const showPdf=(pdfFile)=>{
+  const showPdf = (pdfFile) => {
     window.open(`http://localhost:3001/uploads/${pdfFile}`)
     console.log(pdfFile)
   }
+
   return (
     <div className="assignment-detail">
       {!isLoading ? (
@@ -90,8 +89,8 @@ const AssignmentDetail = ({ user }) => {
               <button type="submit">Add Note</button>
             </form>
             <div className="notes">
-              {notes ? (
-                notes.split('\n').map((note, index) => (
+              {notes.length > 0 ? (
+                notes.map((note, index) => (
                   <div key={index} className="note">
                     <p>{note}</p>
                   </div>
@@ -105,8 +104,8 @@ const AssignmentDetail = ({ user }) => {
       ) : (
         <p>Loading assignment details...</p>
       )}
-      <button onClick={()=>showPdf(detail?.assignfile?.pdf)}>
-      Show File
+      <button onClick={() => showPdf(detail?.assignfile?.pdf)}>
+        Show File
       </button>
     </div>
   )
