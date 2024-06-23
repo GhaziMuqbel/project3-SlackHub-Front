@@ -1,16 +1,14 @@
-import React, { useState, useEffect } from "react"
-import { useParams, useNavigate } from "react-router-dom"
-import axios from "axios"
+import React, { useState, useEffect } from 'react'
+import { useParams, useNavigate } from 'react-router-dom'
+import axios from 'axios'
 
 const AssignmentDetail = ({ user }) => {
   const { assignmentId } = useParams()
   const [detail, setDetail] = useState(null)
   const [isLoading, setIsLoading] = useState(true)
-  const [notes, setNotes] = useState("")
-  const [newNote, setNewNote] = useState("")
-  const [Files, setFiles] = useState(null)
+  const [notes, setNotes] = useState([])
+  const [newNote, setNewNote] = useState('')
   const navigate = useNavigate()
-  let uploadedFile = ""
 
   useEffect(() => {
     const getDetails = async () => {
@@ -21,7 +19,7 @@ const AssignmentDetail = ({ user }) => {
         setDetail(response.data)
         setIsLoading(false)
       } catch (error) {
-        console.error("Error fetching assignment details:", error)
+        console.error('Error fetching assignment details:', error)
         setIsLoading(false)
       }
     }
@@ -31,11 +29,11 @@ const AssignmentDetail = ({ user }) => {
         const response = await axios.get(
           `http://localhost:3001/notes/get/${assignmentId}`
         )
-        console.log("Notes response:", response.data)
-        setNotes(response.data)
+        console.log('Notes response:', response.data)
+        setNotes(response.data.split('\n'))
       } catch (error) {
-        console.error("Error fetching notes:", error)
-        setNotes("")
+        console.error('Error fetching notes:', error)
+        setNotes([])
       }
     }
 
@@ -52,12 +50,12 @@ const AssignmentDetail = ({ user }) => {
         assignmentId,
         content: newNote,
         userId: user.id,
-        userName: user.name,
+        userName: user.name
       })
-      setNotes(response.data.notes)
-      setNewNote("")
+      setNotes(response.data.notes.split('\n'))
+      setNewNote('')
     } catch (error) {
-      console.error("Error adding note:", error)
+      console.error('Error adding note:', error)
     }
   }
 
@@ -69,6 +67,7 @@ const AssignmentDetail = ({ user }) => {
     window.open(`http://localhost:3001/uploads/${pdfFile}`)
     console.log(pdfFile)
   }
+
   return (
     <div className="assignment-detail">
       {!isLoading ? (
@@ -87,13 +86,11 @@ const AssignmentDetail = ({ user }) => {
                 onChange={(e) => setNewNote(e.target.value)}
                 placeholder="Write your note here..."
               />
-              <button type="submit" className="addnote">
-                Add Note
-              </button>
+              <button type="submit">Add Note</button>
             </form>
             <div className="notes">
-              {notes ? (
-                notes.split("\n").map((note, index) => (
+              {notes.length > 0 ? (
+                notes.map((note, index) => (
                   <div key={index} className="note">
                     <p>{note}</p>
                   </div>

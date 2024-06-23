@@ -51,6 +51,8 @@ const AssignmentUpload = () => {
           },
         }
       )
+
+      // history.push(`/courses/${courseId}`) // Navigate to the course page after successful upload
     } catch (error) {
       setError("Error uploading assignment. Please try again.")
       console.error("Error uploading assignment:", error)
@@ -184,4 +186,5 @@ const AssignmentUpload = () => {
     </div>
   )
 }
+
 export default AssignmentUpload
